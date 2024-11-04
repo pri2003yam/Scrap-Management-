@@ -1,6 +1,24 @@
 import React from 'react'
+import { useState } from 'react'
 
 function Registerpage() {
+    const[name,setname] = useState('')
+    const[email,setemail] = useState('')
+    const[password,setpassword] = useState('')
+    const[city,setcity] = useState('')
+    const[locality,setlocality] = useState('')
+
+     function register(){
+        const user = {
+            name,
+            email,
+            password,
+            city,
+            locality
+        }
+        console.log('user');
+    }
+
     return (
         <div class="container">
         <div class="screen">
@@ -8,33 +26,31 @@ function Registerpage() {
                 <form class="login">
                 <div class="login__field">
                         <i class="login__icon fas fa-user"></i>
-                        <input type="text" class="login__input" placeholder="Name"/>
+                        <input type="text" class="login__input" placeholder="Name" value = {name}
+                     onChange={(e)=>(setname(e.target.value))}/>
                     </div>
                     <div class="login__field">
                         <i class="login__icon fas fa-user"></i>
-                        <input type="text" class="login__input" placeholder="Age"/>
-                    </div>
-                    <div class="login__field">
-                        <i class="login__icon fas fa-user"></i>
-                        <input type="text" class="login__input" placeholder="User name / Email"/>
+                        <input type="text" class="login__input" placeholder="Email" value = {email}
+                     onChange={(e)=>(setemail(e.target.value))}/>
                     </div>
                     <div class="login__field">
                         <i class="login__icon fas fa-lock"></i>
-                        <input type="password" class="login__input" placeholder="Password"/>
+                        <input type="password" class="login__input" placeholder="Password" value = {password}
+                     onChange={(e)=>(setpassword(e.target.value))}/>
                     </div>
-                    <button class="button login__submit">
-                        <span class="button__text">Sign Up</span>
-                        <i class="button__icon fas fa-chevron-right"></i>
-                    </button>				
+                    <div class="login__field">
+                        <i class="login__icon fas fa-user"></i>
+                        <input type="text" class="login__input" placeholder="City" value = {city}
+                     onChange={(e)=>(setcity(e.target.value))}/>
+                    </div>
+                    <div class="login__field">
+                        <i class="login__icon fas fa-user"></i>
+                        <input type="text" class="login__input" placeholder="Locality" value = {locality}
+                     onChange={(e)=>(setlocality(e.target.value))}/>
+                    </div>
+                    <button type="button" class="btn btn-outline-secondary mt-3" onClick={register}>Sign Up</button>		
                 </form>
-                <div class="social-login">
-                    <h3>log in via</h3>
-                    <div class="social-icons">
-                        <a href="#" class="social-login__icon fab fa-instagram"></a>
-                        <a href="#" class="social-login__icon fab fa-facebook"></a>
-                        <a href="#" class="social-login__icon fab fa-twitter"></a>
-                    </div>
-                </div>
             </div>
             <div class="screen__background">
                 <span class="screen__background__shape screen__background__shape4"></span>
