@@ -161,3 +161,19 @@ body {
 .social-login__icon:hover {
 	transform: scale(1.5);	
 }
+.navbar{
+	background-color: rgba(51, 51, 51, 0.95)!important;
+}
+.nav-link{
+	color: white !important;
+}
+.navbar-brand{
+	color: white !important;
+	font-style: italic;
+	font-weight: bold;
+	font-size: 35px;
+
+}
+.navbar-nav{
+	margin-left: auto !important;
+}
